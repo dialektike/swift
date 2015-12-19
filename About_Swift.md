@@ -1,8 +1,7 @@
 <!-- About Swift -->
 ## Swift에 대하여
 
-<!-- Swift is a new programming language for iOS, OS X, watchOS, and tvOS apps that builds on the best of C and Objective-C, without the constraints of C compatibility. -->
-Swift는 C 언어 호환성의 속박에서 벗어나 C와 Objective-C 언어의 좋은 점을 기반으로 만들어진 iOS, OS X, watchOS, 그리고 tvOS용 앱을 위한 새로운 언어입니다. 
+<!-- Swift is a new programming language for iOS, OS X, watchOS, and tvOS apps that builds on the best of C and Objective-C, without the constraints of C compatibility. --> Swift는 C 언어 호환성의 속박에서 벗어나 C와 Objective-C 언어의 좋은 점을 기반으로 만들어진 iOS, OS X, watchOS, 그리고 tvOS용 앱을 위한 새로운 언어입니다. 
 <!-- Swift adopts safe programming patterns and adds modern features to make programming easier, more flexible, and more fun. -->
 Swift는 안전한 프로그래밍 패턴을 채용했으며 프로그래밍을 더 쉽고, 유연하고, 재미있게 만들어주는 현대적인 특징들(modern features)을 더했습니다. 
 <!-- Swift’s clean slate, backed by the mature and much-loved Cocoa and Cocoa Touch frameworks, is an opportunity to reimagine how software development works. -->
