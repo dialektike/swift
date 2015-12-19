@@ -9,6 +9,7 @@ Swift는 안전한 프로그래밍 패턴을 채용했으며 프로그래밍을 
 성숙하고 많은-사랑을 받고 있는 코코아와 코코아 터치 프레임워크를 기반으로, 둔 Swift의 오점 없는 훌륭한 경력은, 소프트웨어 개발 방법을 재고해볼 기회를 제공합니다.
 
 
+
 <!-- Swift has been years in the making. -->
 Swift는 오랜 기간동한 만들어져 왔습니다.
 <!-- Apple laid the foundation for Swift by advancing our existing compiler, debugger, and framework infrastructure. -->
@@ -16,11 +17,11 @@ Swift는 오랜 기간동한 만들어져 왔습니다.
 <!-- We simplified memory management with Automatic Reference Counting (ARC). -->
 우리는 ARC(Auto Reference Counting)로 메모리 관리를 단순화 했습니다. 
 <!-- Our framework stack, built on the solid base of Foundation and Cocoa, has been modernized and standardized throughout. -->
-Foundation과 Cocoa의 견고한 기초를 기반으로 만들어진, 우리의 프레임웍 스택(framework stack)은 현대화되고 표준화된 결과물이죠. <!-- Objective-C itself has evolved to support blocks, collection literals, and modules, enabling framework adoption of modern language technologies without disruption. -->
+Foundation과 Cocoa의 견고한 기초를 기반으로 만들어진, 우리의 프레임웍 스택(framework stack)은 현대화되고 표준화된 결과물이죠.
+<!-- Objective-C itself has evolved to support blocks, collection literals, and modules, enabling framework adoption of modern language technologies without disruption. -->
 Objective-C 그 자체로, 혼란없는 최신 언어 기술 프레임워크 적용 가능 등을 지원하도록, 블록(blocks) , 문자집합(collection literals), 그리고 모듈(modules) 차츰 발전시켜 왔습니다.
 <!-- Thanks to this groundwork, we can now introduce a new language for the future of Apple software development. -->
 이러한 기초작업 덕분에,우리는 이제 애플 소프트웨어 개발의 미래를 위한 새로운 언어를 소개할 수 있었습니다.
-
 
 <!-- Swift feels familiar to Objective-C developers. -->
 Swift는 Objective-C 개발자들에게 매우 친숙한 느낌을 줍니다.
@@ -38,7 +39,6 @@ Swift는 스크립팅(scripting) 언어만큼이나 표현력이 있고 즐거�
 <!-- It supports playgrounds, an innovative feature that allows programmers to experiment with Swift code and see the results immediately, without the overhead of building and running an app. -->
 이 언어는 playgrounds를 지원하며, 이는 프로그램어들(programmers)에게 앱을 빌드하고 실행하는 동안 시간을 낭비하는 일 없이,   즉시 결과를 볼 수 있도록 Swift로 실험할 수 있게 해줍니다.
 
-
 <!-- Swift combines the best in modern language thinking with wisdom from the wider Apple engineering culture. -->
 Swift는 폭넓은 애플 엔지니어링 문화로부터 나온 지혜를 가지고 생각하여  현대 언어에서 최고의 것들을  짜 맞추었습니다.
 <!-- The compiler is optimized for performance, and the language is optimized for development, without compromising on either. -->
@@ -47,7 +47,6 @@ Swift는 폭넓은 애플 엔지니어링 문화로부터 나온 지혜를 가�
 이 언어는 (단순한 프로그램인) "hello, world"부터 전체 운영체제로 확장할 수 있게 디자인 되었습니다. 
 <!-- All this makes Swift a sound future investment for developers and for Apple. -->
 이 모든것은 결국 애플과 개발자들을 위해서 Swift에게 미래 투자를 하게끔 해줍니다.
-
 
 <!-- Swift is a fantastic way to write iOS, OS X, watchOS, and tvOS apps, and will continue to evolve with new features and capabilities. -->
 Swift는 iOS, OS X, watchOS, 그리고 tvOS용 앱을 쓰고, 계속해서 새로운 기능을 추가하고 개선하는 위한 환상적인 방법입니다.
