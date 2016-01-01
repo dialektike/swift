@@ -14,8 +14,6 @@ print("Hello, world!")
 <!-- Code written at global scope is used as the entry point for the program, so you don’t need a main() function. -->
 전역 범위(Global scope)로 쓰여진 코드는 그 프로그램을 위한  진입점(entry point)로 사용되므로, 여러분은  main() 함수를 사용할 필요가 없습니다.
 <!-- You also don’t need to write semicolons at the end of every statement. -->
-전역 범위(Global scope)에 해당하는 코드는 프로그램의 진입점(entry point)로 사용되기 때문에, `main()` 함수는 필요하지 않습니다.
-<!-- You also don’t need to write semicolons at the end of every statement. -->
 또한 모든 문장 끝에 세미콜론(즉 ;)을 쓸 필요도 없습니다.
 
 <!-- This tour gives you enough information to start writing code in Swift by showing you how to accomplish a variety of programming tasks. -->
@@ -23,10 +21,7 @@ print("Hello, world!")
 <!-- Don’t worry if you don’t understand something—everything introduced in this tour is explained in detail in the rest of this book. -->
 이해하지 못 하는 것이 있다고 해서 걱정하지 마세요—이 견학에서 소개하는 모든 것들은 이 책의 나머지 부분에서 자세히 설명할 것입니다.
 
-<!-- NOTE -- >
 > 주의(NOTE):
-
 <!-- For the best experience, open this chapter as a playground in Xcode. Playgrounds allow you to edit the code listings and see the result immediately. --> 
 >가장 좋은 경험을 하기 위해서는, Xcode 안에 있는 Playground으로 이 장을 열어보세요. Playground는 여러분들에게 코드를 수정하는 즉시 그 결과를 볼 수 있게 해줄 것입니다.
-
 > <a href="https://developer.apple.com/library/prerelease/ios/documentation/Swift/Conceptual/Swift_Programming_Language/GuidedTour.playground.zip">Playground 다운 받기</a>
