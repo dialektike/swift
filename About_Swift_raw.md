@@ -8,7 +8,7 @@ Swift는 안전한 프로그래밍 패턴을 채용했으며 프로그래밍을 
 <!-- Swift’s clean slate, backed by the mature and much-loved Cocoa and Cocoa Touch frameworks, is an opportunity to reimagine how software development works. -->
 성숙하고 많은-사랑을 받고 있는 코코아와 코코아 터치 프레임워크를 기반으로, 둔 Swift의 오점 없는 훌륭한 경력은, 소프트웨어 개발 방법을 재고해볼 기회를 제공합니다.
 
-
+2 단락
 
 <!-- Swift has been years in the making. -->
 Swift는 오랜 기간동한 만들어져 왔습니다.
