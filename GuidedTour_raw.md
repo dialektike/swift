@@ -266,4 +266,5 @@ for var i = 0; i < 4; ++i {
 }
 print(secondForLoop)
 ```
-Use ..< to make a range that omits its upper value, and use ... to make a range that includes both values.
+<!-- Use ..< to make a range that omits its upper value, and use ... to make a range that includes both values. -->
+..< 을 사용하면 가장 마지막 값을 제외하고 범위를 지정하지만, ...을 사용하면 양쪽 끝 두 값 모두를 범위에 포함하게 됩니다.
