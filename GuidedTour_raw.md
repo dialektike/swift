@@ -25,7 +25,7 @@ print("Hello, world!")
 
 <!-- NOTE -- >
 > 주의(NOTE):
-<!-- For the best experience, open this chapter as a playground in Xcode. Playgrounds allow you to edit the code listings and see the result immediately. --> 
+<!-- For the best experience, open this chapter as a playground in Xcode. Playgrounds allow you to edit the code listings and see the result immediately. -->
 > 가장 좋은 경험을 하기 위해서는, Xcode 안에 있는 Playground으로 이 장을 열어보세요. Playground는 여러분들에게 코드를 수정하는 즉시 그 결과를 볼 수 있게 해줄 것입니다.
 > <a href="https://developer.apple.com/library/prerelease/ios/documentation/Swift/Conceptual/Swift_Programming_Language/GuidedTour.playground.zip">Playground 다운 받기</a>
 
@@ -50,7 +50,7 @@ let myConstant = 42
 <!-- However, you don’t always have to write the type explicitly. -->
 그러나, 그 타입을 항상 명시적으로 작성할 필요는 없습니다.
 <!-- Providing a value when you create a constant or variable lets the compiler infer its type. -->
-상수나 변수를 여러분이 상수나 변수를 만들 때 할당한 값을 통해 컴파일러는 해당 값의 타입을 추측합니다. 
+상수나 변수를 여러분이 상수나 변수를 만들 때 할당한 값을 통해 컴파일러는 해당 값의 타입을 추측합니다.
 <!-- In the example above, the compiler infers that ‘myVariable’ is an integer because its initial value is an integer. -->
 위의 예에서, `myVariable`은 처음 값이 정수였기 때문에 컴파일러는 그것을 정수라고 추론합니다(infers).
 
@@ -103,7 +103,7 @@ let fruitSummary = "I have \(apples + oranges) pieces of fruit."
 ``` swift
 var shoppingList = ["catfish", "water", "tulips", "blue paint"]
 shoppingList[1] = "bottle of water"
- 
+
 var occupations = [
     "Malcolm": "Captain",
     "Kaylee": "Mechanic",
@@ -161,7 +161,7 @@ You can use `if` and `let` together to work with values that might be missing.
 ``` swift
 var optionalString: String? = "Hello"
 print(optionalString == nil)
- 
+
 var optionalName: String? = "John Appleseed"
 var greeting = "Hello!"
 if let name = optionalName {
@@ -174,7 +174,7 @@ if let name = optionalName {
 > `optionalName`의 값을 `nil`로 바꾸자. 여러분은 어떤 인사말(greeting)을 얻을 수 있습니까? 만약 `optionalName`이 `nil`이라면 다른 인사말을 설정하는 `else` 절을 추가해보자.
 
 <!-- If the `optional` value is `nil`, the conditional is `false` and the code in braces is skipped. -->
-만약 옵션널(optional) 값이 `nil`이라면, 그 조건문은 `false`(즉 거짓)이 되고 중괄호 안에 있는 코드를 건너뛰게 됩니다. 
+만약 옵션널(optional) 값이 `nil`이라면, 그 조건문은 `false`(즉 거짓)이 되고 중괄호 안에 있는 코드를 건너뛰게 됩니다.
 <!-- Otherwise, the optional value is unwrapped and assigned to the constant after `let`, which makes the unwrapped value available inside the block of code. -->
 다른 방법으로, 옵션널(optional) 값이 풀어져 `let` 뒤에 상수로 할당되면, 풀어진 값은 코드의 블록 안에서 유용하게 된다.
 
@@ -191,3 +191,79 @@ let informalGreeting = "Hi \(nickName ?? fullName)"
 
 Switches support any kind of data and a wide variety of comparison operations—they aren’t limited to integers and tests for equality.
 switch문에는 정수 타입 값이나 동등 비교연산 뿐만 아니라 어떤 종류의 데이터든 사용할 수 있고 다양한 비교 연산자들을 사용할 수 있습니다.
+
+``` swift
+let vegetable = "red pepper"
+switch vegetable {
+case "celery":
+    print("Add some raisins and make ants on a log.")
+case "cucumber", "watercress":
+    print("That would make a good tea sandwich.")
+case let x where x.hasSuffix("pepper"):
+    print("Is it a spicy \(x)?")
+default:
+    print("Everything tastes good in soup.")
+}
+```
+> 실험(EXPERIMENT):
+<!-- Try removing the default case. What error do you get? -->
+> (위에서) default 사례를 지워보자. 어려분에게 어떤 에러가 발생하는가?
+
+<!-- Notice how let can be used in a pattern to assign the value that matched that part of a pattern to a constant. -->
+
+<!-- After executing the code inside the switch case that matched, the program exits from the switch statement. Execution doesn’t continue to the next case, so there is no need to explicitly break out of the switch at the end of each case’s code. -->
+
+<!-- You use for-in to iterate over items in a dictionary by providing a pair of names to use for each key-value pair. Dictionaries are an unordered collection, so their keys and values are iterated over in an arbitrary order. -->
+
+``` swift
+let interestingNumbers = [
+    "Prime": [2, 3, 5, 7, 11, 13],
+    "Fibonacci": [1, 1, 2, 3, 5, 8],
+    "Square": [1, 4, 9, 16, 25],
+]
+var largest = 0
+for (kind, numbers) in interestingNumbers {
+    for number in numbers {
+        if number > largest {
+            largest = number
+        }
+    }
+}
+print(largest)
+```
+> 실험(EXPERIMENT):
+<!-- Add another variable to keep track of which kind of number was the largest, as well as what that largest number was. -->
+> 추가하자.
+
+Use while to repeat a block of code until a condition changes. The condition of a loop can be at the end instead, ensuring that the loop is run at least once.
+
+``` swift
+var n = 2
+while n < 100 {
+    n = n * 2
+}
+print(n)
+
+var m = 2
+repeat {
+    m = m * 2
+} while m < 100
+print(m)
+```
+
+You can keep an index in a loop—either by using ..< to make a range of indexes or by writing an explicit initialization, condition, and increment. These two loops do the same thing:
+
+``` swift
+var firstForLoop = 0
+for i in 0..<4 {
+    firstForLoop += i
+}
+print(firstForLoop)
+
+var secondForLoop = 0
+for var i = 0; i < 4; ++i {
+    secondForLoop += i
+}
+print(secondForLoop)
+```
+Use ..< to make a range that omits its upper value, and use ... to make a range that includes both values.
