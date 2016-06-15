@@ -83,7 +83,6 @@ let widthLabel = label + String(width)
 > 마지막 줄에서 `String` 타입으로 변환하는 부분을 제거해보자. 어떤 에러가 발생하는가?
 
 <!-- There’s an even simpler way to include values in strings: Write the value in parentheses, and write a backslash (\) before the parentheses. For example: -->
-
 문자열들 안에 값들을 포함하는 더 쉬운 방법이 있습니다: 괄호 안에 그 값을 쓰고 그 괄호 앞에 백슬래시(\)를 쓰면 됩니다. 예를 들면 다음과 같습니다:
 
 ``` swift
@@ -128,6 +127,7 @@ let emptyDictionary = [String: Float]()
 shoppingList = []
 occupations = [:]
 ```
+
 ## 흐름 제어(Control Flow)
 <!-- Use `if` and `switch` to make conditionals, and use `for-in`, `for`, `while`, and `repeat-while` to make loops. -->
 `if`와 `switch`를 사용해서 조건문을 만들 수 있고, `for-in`, `for`, `while`, `repeat-while`을 사용해서 반복문(loops)을 만들 수 있습니다.
@@ -152,14 +152,13 @@ In an `if` statement, the conditional must be a Boolean expression—this means 
 `if`문장 안에서, 조건문은 꼭 불리언(Boolean) 표현이어야 합니다— 이는 `if score {...}`와 같은 코드가 에러라는 라고 표현하면 0과의 비교를 암시하지 않기 때문에 에러가 발생합니다.
 
 ---
-
 You can use `if` and `let` together to work with values that might be missing.
-여러분들은 `if` 그리고 `let`
+여러분들은 빠져 있을 수도 있는 값들를 가지고 작업하기 위하여 `if` 그리고 `let`을 함께 사용할 수 있습니다.
 <!-- These values are represented as optionals. -->
 이러한 값들은 옵션널(optionals)이라고 표현됩니다.
 <!-- An optional value either contains a value or contains `nil` to indicate that a value is missing. -->
-옵션널한 값은 어떤 값을 가지거나, 또는 값이 빠졌다고 지시하기 위하여 `nil`을 가지거나 둘 중 하나 입니다.
-<!-- Write a question mark (?) after the type of a value to mark the value as optional. -->
+옵션널한 값은 어떤 값을 가지거나, 또는 값이 빠졌다는 것을 지시하기 위하여 `nil`을 가지거나 둘 중 하나 입니다.
+<!-- Write a question mark (`?`) after the type of a value to mark the value as optional. -->
 그 값이 옵션널하다고 표시하기 위해 어떤 값의 타입 뒤에 물음표(`?`)를 씁니다.
 
 ``` swift
