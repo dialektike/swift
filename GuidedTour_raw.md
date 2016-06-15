@@ -121,7 +121,7 @@ let emptyDictionary = [String: Float]()
 ```
 
 <!-- If type information can be inferred, you can write an empty array as [] and an empty dictionary as [:]—for example, when you set a new value for a variable or pass an argument to a function. -->
-만약 타입 정보를 추론할 수 없다면, 여러분들은 빈 배열을 []로 빈 딕셔너리을 [:]로 표기할 수 있습니다—예를 들어, 변수에 새로운 값을 할당하거나 또는 함수에 인자(argument)로 전달할 때 다음과 같이 한다.
+만약 타입 정보를 추론할 수 없다면, 여러분은 빈 배열을 []로 쓰고, 빈 딕셔너리을 [:]로 쓸 수 있습니다—예를 들어, 여러분이 어떤 변수에 새로운 값을 할당하거나 또는 함수에 인자(argument)로 전달할 때 다음과 같이 한다.
 
 ``` swift
 shoppingList = []
@@ -152,14 +152,14 @@ In an `if` statement, the conditional must be a Boolean expression—this means 
 `if`문장 안에서, 조건문은 꼭 불리언(Boolean) 표현이어야 합니다— 이는 `if score {...}`와 같은 코드가 에러라는 라고 표현하면 0과의 비교를 암시하지 않기 때문에 에러가 발생합니다.
 
 ---
-You can use `if` and `let` together to work with values that might be missing.
-여러분들은 빠져 있을 수도 있는 값들를 가지고 작업하기 위하여 `if` 그리고 `let`을 함께 사용할 수 있습니다.
+<!-- You can use `if` and `let` together to work with values that might be missing. -->
+여러분들은 빠져 있을 수도 있는 값들을 가지고 작업하기 위하여 `if` 그리고 `let`을 함께 사용할 수 있습니다.
 <!-- These values are represented as optionals. -->
 이러한 값들은 옵션널(optionals)이라고 표현됩니다.
 <!-- An optional value either contains a value or contains `nil` to indicate that a value is missing. -->
-옵션널한 값은 어떤 값을 가지거나, 또는 값이 빠졌다는 것을 지시하기 위하여 `nil`을 가지거나 둘 중 하나 입니다.
+옵션널한(optional) 값이란 어떤 값을 갖고 있거나, 또는 값이 빠졌있다는 것을 지시하고 있는 `nil`을 갖고 있거나 둘 중 하나 입니다.
 <!-- Write a question mark (`?`) after the type of a value to mark the value as optional. -->
-그 값이 옵션널하다고 표시하기 위해 어떤 값의 타입 뒤에 물음표(`?`)를 씁니다.
+그 값이 옵션널하다고 표시하기 위해서 어떤 값의 타입 뒤에 물음표(`?`)를 씁니다.
 
 ``` swift
 var optionalString: String? = "Hello"
@@ -174,15 +174,16 @@ if let name = optionalName {
 
 > 실험(EXPERIMENT):
 <!-- Change `optionalName` to `nil`. What greeting do you get? Add an `else` clause that sets a different greeting if `optionalName` is `nil`. -->
-> `optionalName`의 값을 `nil`로 바꾸자. 여러분은 어떤 인사말(greeting)을 얻을 수 있습니까? 만약 `optionalName`이 `nil`이라면 다른 인사말을 설정하는 `else` 절을 추가해보자.
+> `optionalName`의 값을 `nil`로 바꿔 봅시다. 여러분은 어떤 인사말(greeting)을 얻을 수 있습니까? 만약 `optionalName`이 `nil`이라면 다른 인사말을 설정하는 `else` 절을 추가해봅시다.
 
-<!-- If the `optional` value is `nil`, the conditional is `false` and the code in braces is skipped. -->
-만약 옵션널(optional) 값이 `nil`이라면, 그 조건문은 `false`(즉 거짓)이 되고 중괄호 안에 있는 코드를 건너뛰게 됩니다.
-<!-- Otherwise, the optional value is unwrapped and assigned to the constant after `let`, which makes the unwrapped value available inside the block of code. -->
-다른 방법으로, 옵션널(optional) 값이 풀어져 `let` 뒤에 상수로 할당되면, 풀어진 값은 코드의 블록 안에서 유용하게 된다.
+<!-- If the optional value is `nil`, the conditional is `false` and the code in braces is skipped. -->
+만약 옵션널한(optional) 값이 `nil`이라면, 그 조건문은 `false`(즉 거짓)이 되고 중괄호 안에 있는 코드를 건너뛰게 됩니다.
+Otherwise, the optional value is unwrapped and assigned to the constant after `let`, which makes the unwrapped value available inside the block of code.
+다른 방법으로, 옵션널한 값이 풀어져 `let` 뒤에 상수로 할당되면, 풀어진 값은 코드의 블록 안에서 유용하게 된다.
 
-Another way to handle optional values is to provide a default value using the `??` operator.
-옵션널(optional) 값을 다루는 다른 방법은 `??`라는 연산자를 사용하여 디폴트(default) 값을 제공하는 것이다.
+---
+<!-- Another way to handle optional values is to provide a default value using the `??` operator. -->
+옵션널한(optional) 값들을 다루는 다른 방법은 `??`라는 연산자를 사용하여 디폴트(default) 값을 제공하는 것이다.
 If the optional value is missing, the default value is used instead.
 옵션널(optional) 값이 빠졌다면, 이 디폴트(default) 값을 대신 사용할 것이다.
 
