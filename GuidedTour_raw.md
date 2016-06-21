@@ -16,7 +16,7 @@ print("Hello, world!")
 <!-- Code written at global scope is used as the entry point for the program, so you don’t need a main() function. -->
 전역 범위(Global scope)로 쓰여진 코드는 그 프로그램을 위한 진입점(entry point)로 사용되므로, 여러분은 `main()` 함수를 사용할 필요가 없습니다.
 <!-- You also don’t need to write semicolons at the end of every statement. -->
-또한 모든 문장 끝에 세미콜론(번역자 주: 즉 ;)을 쓸 필요도 없습니다.
+또한 모든 문장 끝에 세미콜론(번역자 주: 즉 ;)도 쓸 필요도 없습니다.
 
 ---
 <!-- This tour gives you enough information to start writing code in Swift by showing you how to accomplish a variety of programming tasks. -->
@@ -49,10 +49,10 @@ let myConstant = 42
 상수나 변수는 여러분이 그것들에게 부여하기 원하는 값과 같은 타입(type)을 가져야 합니다.
 <!-- However, you don’t always have to write the type explicitly. -->
 그러나, 그 타입을 항상 명시적으로 작성할 필요는 없습니다.
-Providing a value when you create a constant or variable lets the compiler infer its type.
-상수나 변수를 여러분이 상수나 변수를 창조하여  할당한 값을 통해 컴파일러는 해당 값의 타입을 추측합니다.
+<!-- Providing a value when you create a constant or variable lets the compiler infer its type. -->
+여러분이 상수나 변수를 창조할 때 제공한 값을 통해 컴파일러는 해당 값의 타입을 추정(infer)합니다.
 <!-- In the example above, the compiler infers that ‘myVariable’ is an integer because its initial value is an integer. -->
-위의 예에서, `myVariable`은 처음 값이 정수였기 때문에 컴파일러는 그것을 정수라고 추론합니다(infers).
+위의 예에서, `myVariable`은 처음 값이 정수였기 때문에 컴파일러는 그것을 정수라고 추정합니다.
 
 ---
 <!-- If the initial value doesn’t provide enough information (or if there is no initial value), specify the type by writing it after the variable, separated by a colon. -->
@@ -149,7 +149,7 @@ for score in individualScores {
 print(teamScore)
 ```
 In an `if` statement, the conditional must be a Boolean expression—this means that code such as `if score { ... }` is an error, not an implicit comparison to zero.
-`if`문장 안에서, 조건문은 꼭 불리언(Boolean) 표현이어야 합니다— 이는 `if score {...}`와 같은 코드가 에러라는 라고 표현하면 0과의 비교를 암시하지 않기 때문에 에러가 발생합니다.
+`if`문장 안에서, 조건문은 꼭 불리언(Boolean) 표현이어야 합니다—이는 `if score {...}`와 같은 코드가 에러라는 라고 표현하면 0과의 비교를 암시하지 않기 때문에 에러가 발생합니다.
 
 ---
 <!-- You can use `if` and `let` together to work with values that might be missing. -->
@@ -193,8 +193,8 @@ let fullName: String = "John Appleseed"
 let informalGreeting = "Hi \(nickName ?? fullName)"
 ```
 
-Switches support any kind of data and a wide variety of comparison operations—they aren’t limited to integers and tests for equality.
-switch문에는 정수 타입 값이나 동등 비교연산 뿐만 아니라 어떤 종류의 데이터든 사용할 수 있고 다양한 비교 연산자들을 사용할 수 있습니다.
+<!-- Switches support any kind of data and a wide variety of comparison operations—they aren’t limited to integers and tests for equality. -->
+switch문은 어떤 종류의 자료와 광범위하게 다양한 비교 연자들을 지원합니다 - 즉 '동등성을 위한(for equality)' 시험과 정수들에 제한이 없습니다.
 
 ``` swift
 let vegetable = "red pepper"
@@ -278,7 +278,7 @@ print(total)
 ## 함수와 클로저(Functions and Closures)
 
 <!-- Use `func` to declare a function. -->
-함수를 선언하기 위하여 `func`를 사용해보자.
+함수를 선언하기 위하여 `func`를 사용해봅시다.
 Call a function by following its name with a list of arguments in parentheses.
 괄호안에 함수의 이름과 괄호안에 인자들을 넣을 수 있습니다. 함수를 호출할 때
 Use `->` to separate the parameter names and types from the function’s return type.
