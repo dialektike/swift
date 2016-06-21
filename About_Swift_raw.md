@@ -33,11 +33,11 @@ Swift는 Objective-C 개발자들에게 매우 친숙한 느낌을 줍니다.
 이러한 공통점을 기반으로, Swift는 많은 새로운 특징들을 도입했고 (프로그램) 언어의 절차지향(procedural)과 객체지향(object-oriented) 부분을 통합했습니다.
 
 <!-- Swift is friendly to new programmers. -->
-Swift는 새로운 프로그레머들(programmers)에게 친근합니다.
+Swift는 새로운 프로그래머들(programmers)에게 친근합니다.
 <!-- It is the first industrial-quality systems programming language that is as expressive and enjoyable as a scripting language. -->
 Swift는 스크립팅(scripting) 언어만큼이나 표현력이 있고 즐거움을 줄만한 첫 번째 산업-품질에 적합한 시스템(industrial-quality systems) 프로그래밍 언어입니다.
 <!-- It supports playgrounds, an innovative feature that allows programmers to experiment with Swift code and see the results immediately, without the overhead of building and running an app. -->
-이 언어는 playgrounds를 지원하며, 이는 프로그램어들(programmers)에게 앱을 빌드하고 실행하는 동안 시간을 낭비하는 일 없이,   즉시 결과를 볼 수 있도록 Swift로 실험할 수 있게 해줍니다.
+이 언어는 playgrounds를 지원하며, 이는 프로그래머들(programmers)에게 앱을 빌드하고 실행하는 동안 시간을 낭비하는 일 없이,   즉시 결과를 볼 수 있도록 Swift로 실험할 수 있게 해줍니다.
 
 <!-- Swift combines the best in modern language thinking with wisdom from the wider Apple engineering culture. -->
 Swift는 폭넓은 애플 엔지니어링 문화로부터 나온 지혜를 가지고 생각하여  현대 언어에서 최고의 것들을  짜 맞추었습니다.
