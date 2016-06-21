@@ -184,8 +184,8 @@ Otherwise, the optional value is unwrapped and assigned to the constant after `l
 ---
 <!-- Another way to handle optional values is to provide a default value using the `??` operator. -->
 옵션널한(optional) 값들을 다루는 다른 방법은 `??`라는 연산자를 사용하여 디폴트(default) 값을 제공하는 것이다.
-If the optional value is missing, the default value is used instead.
-옵션널(optional) 값이 빠졌다면, 이 디폴트(default) 값을 대신 사용할 것이다.
+<!-- If the optional value is missing, the default value is used instead.-->
+옵션널(optional) 값이 빠져있다면, 대신 이 디폴트(default) 값을 사용할 것이다.
 
 ``` swift
 let nickName: String? = nil
@@ -210,14 +210,17 @@ default:
 }
 ```
 > 실험(EXPERIMENT):
-<!-- Try removing the default case. What error do you get? -->
-> (위에서) default 사례를 지워보자. 어려분에게 어떤 에러가 발생하는가?
+<!-- Try removing the `default` case. What error do you get? -->
+> (위에서) `default` 부분를 지워보자. 여러분에게 어떤 에러가 발생하는가?
 
-<!-- Notice how let can be used in a pattern to assign the value that matched that part of a pattern to a constant. -->
-
+<!-- Notice how `let` can be used in a pattern to assign the value that matched that part of a pattern to a constant. -->
+상수의
 <!-- After executing the code inside the switch case that matched, the program exits from the switch statement. Execution doesn’t continue to the next case, so there is no need to explicitly break out of the switch at the end of each case’s code. -->
 
-<!-- You use for-in to iterate over items in a dictionary by providing a pair of names to use for each key-value pair. Dictionaries are an unordered collection, so their keys and values are iterated over in an arbitrary order. -->
+<!-- You use `for-in` to iterate over items in a dictionary by providing a pair of names to use for each key-value pair. -->
+여러분은 `for-in`문을 사용하여 각각 키-값 쌍으로 사용할 수 있는 이름들의 쌍을 제공하여 딕셔너리안에 있는 요소들(items)을 반복 처리할 수 있습니다.
+Dictionaries are an unordered collection, so their keys and values are iterated over in an arbitrary order.
+딕셔너리들을 '규칙적이지 않은(unordered)' 집단이기에, 그들의 키와 값들은 임의의 규칙으로 반복됩니다.
 
 ``` swift
 let interestingNumbers = [
@@ -237,9 +240,12 @@ print(largest)
 ```
 > 실험(EXPERIMENT):
 <!-- Add another variable to keep track of which kind of number was the largest, as well as what that largest number was. -->
-> 추가하자.
+> 가장 큰 수였던 어떤 숫자가 가장 큰 수로 저장되는지 확인하기 위해 다른 변수를 추가하고, 가장 큰 수로 저장된 숫자가 무엇인지 확인해보라.
 
-Use while to repeat a block of code until a condition changes. The condition of a loop can be at the end instead, ensuring that the loop is run at least once.
+<!-- Use `while` to repeat a block of code until a condition changes. -->
+조건이 변경될 때까지 코드의 블럭이 반복되는 `while`문을 사용해보자.
+<!-- The condition of a loop can be at the end instead, ensuring that the loop is run at least once. -->
+루프(loop)의 조건은, 그 조건이 적어도 한번은 작동하게 보장하기 위해서는, 그 대신에 (번역자 주: 다음과 같이) 끝 부분에 있을 수 있습니다.
 
 ``` swift
 var n = 2
@@ -255,23 +261,40 @@ repeat {
 print(m)
 ```
 
-You can keep an index in a loop—either by using ..< to make a range of indexes or by writing an explicit initialization, condition, and increment. These two loops do the same thing:
+<!-- You can keep an index in a loop by using ..< to make a range of indexes. -->
+여러분들은 인텍스들의 범위를 만들기 위하여 `..<`을 사용하여 루프안에서 인텍스를 유지할 수 있습니다.
 
 ``` swift
-var firstForLoop = 0
+var total = 0
 for i in 0..<4 {
-    firstForLoop += i
+    total += i
 }
-print(firstForLoop)
-
-You can keep an index in a loop by using ..< to make a range of indexes.
-
-
-var secondForLoop = 0
-for var i = 0; i < 4; ++i {
-    secondForLoop += i
-}
-print(secondForLoop)
+print(total)
 ```
-<!-- Use ..< to make a range that omits its upper value, and use ... to make a range that includes both values. -->
-..< 을 사용하면 가장 마지막 값을 제외하고 범위를 지정하지만, ...을 사용하면 양쪽 끝 두 값 모두를 범위에 포함하게 됩니다.
+
+<!-- Use `..<` to make a range that omits its upper value, and use `...` to make a range that includes both values. -->
+가장 마지막 값을 제외하고 범위를 만들기 위해서는 `..<`을 사용하고, 양쪽 끝 두 값 모두를 범위에 포함하게 만들기 위해서는 `...`을 사용하자.
+
+## 함수와 클로저(Functions and Closures)
+
+<!-- Use `func` to declare a function. -->
+함수를 선언하기 위하여 `func`를 사용해보자.
+Call a function by following its name with a list of arguments in parentheses.
+괄호안에 함수의 이름과 괄호안에 인자들을 넣을 수 있습니다. 함수를 호출할 때
+Use `->` to separate the parameter names and types from the function’s return type.
+매개변수(parameter) 이름들과 그 함수의 반환 분리해서 `->` 사용해 타입 이름을 표기하면 함수 반환 값의 타입을 지정할 수 있습니다.
+
+``` swift
+func greet(person: String, day: String) -> String {
+    return "Hello \(person), today is \(day)."
+}
+greet(person: "Bob", day: "Tuesday")
+```
+
+> 실험(EXPERIMENT):
+<!-- > Remove the `day` parameter. Add a parameter to include today’s lunch special in the greeting -->
+>  `day` 매개변수를  지우자. 위의 인사말에 오늘의 특별한 점심을 포함하도록 매개 변수를 추가하자.
+
+By default, functions use their parameter names as labels for their arguments.
+기본적으로(By default), 함수들은 그들의 논증을 위하여 매개 변수 이름을 라벨(labels)로 사용합니다.
+Write a custom argument label before the parameter name, or write `_` to use no argument label.
