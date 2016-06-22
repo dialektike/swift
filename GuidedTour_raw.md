@@ -33,7 +33,7 @@ print("Hello, world!")
 ## 간단한 값들(Simple Values)
 
 <!-- Use `let` to make a constant and `var` to make a variable. -->
-`let`을 사용해서 상수(constant)를 만들고 `var`을 사용하여 변수를 만듭니다.
+`let`을 사용해서 상수(constant)를 만들고 `var`을 사용하여 변수(variable)를 만듭니다.
 <!-- The value of a constant doesn’t need to be known at compile time, but you must assign it a value exactly once. -->
 상수의 값은 컴파일 할 때에 알 필요가 없지만, 그러나 여러분은 정확하게 한번만 그 값을 부여(assign)해야 합니다.
 <!-- This means you can use constants to name a value that you determine once but use in many places. -->
@@ -210,13 +210,19 @@ default:
 }
 ```
 > 실험(EXPERIMENT):
-<!-- Try removing the `default` case. What error do you get? -->
+<!-- > Try removing the `default` case. What error do you get? -->
 > (위에서) `default` 부분를 지워보자. 여러분에게 어떤 에러가 발생하는가?
 
 <!-- Notice how `let` can be used in a pattern to assign the value that matched that part of a pattern to a constant. -->
-상수의
-<!-- After executing the code inside the switch case that matched, the program exits from the switch statement. Execution doesn’t continue to the next case, so there is no need to explicitly break out of the switch at the end of each case’s code. -->
+`let`으로 어떤 상수에서 그 패턴의 부분이 매칭되는 값을 구병하는 상수의 주목하자.
 
+---
+<!-- After executing the code inside the switch case that matched, the program exits from the switch statement. -->
+매칭한 그 스위치 케이스의 안의 코드를 실행한(executing) 다음, 프로그램은 그 스위치 진술 문장에 존재하게 됩니다.
+<!-- Execution doesn’t continue to the next case, so there is no need to explicitly break out of the switch at the end of each case’s code. -->
+실행은 그 다음 케이스를 진행하지 않기에, 각 케이스들 코드의 마지막 부분에서 명시적으로 이 스위치 문에서 빠져나가기 위하여 멈출 필요가 없습니다.
+
+---
 <!-- You use `for-in` to iterate over items in a dictionary by providing a pair of names to use for each key-value pair. -->
 여러분은 `for-in`문을 사용하여 각각 키-값 쌍으로 사용할 수 있는 이름들의 쌍을 제공하여 딕셔너리안에 있는 요소들(items)을 반복 처리할 수 있습니다.
 Dictionaries are an unordered collection, so their keys and values are iterated over in an arbitrary order.
@@ -280,7 +286,7 @@ print(total)
 <!-- Use `func` to declare a function. -->
 함수를 선언하기 위하여 `func`를 사용해봅시다.
 Call a function by following its name with a list of arguments in parentheses.
-괄호안에 함수의 이름과 괄호안에 인자들을 넣을 수 있습니다. 함수를 호출할 때
+괄호안에 함수의 이름과 괄호안에 인수(arguments)들을 넣을 수 있습니다. 함수를 호출할 때
 Use `->` to separate the parameter names and types from the function’s return type.
 매개변수(parameter) 이름들과 그 함수의 반환 분리해서 `->` 사용해 타입 이름을 표기하면 함수 반환 값의 타입을 지정할 수 있습니다.
 
@@ -296,5 +302,154 @@ greet(person: "Bob", day: "Tuesday")
 >  `day` 매개변수를  지우자. 위의 인사말에 오늘의 특별한 점심을 포함하도록 매개 변수를 추가하자.
 
 By default, functions use their parameter names as labels for their arguments.
-기본적으로(By default), 함수들은 그들의 논증을 위하여 매개 변수 이름을 라벨(labels)로 사용합니다.
+기본적으로(By default), 함수들은 그들의 인수를 위하여 매개 변수 이름을 라벨(labels)로 사용합니다.
 Write a custom argument label before the parameter name, or write `_` to use no argument label.
+
+``` swift
+func greet(_ person: String, on day: String) -> String {
+    return "Hello \(person), today is \(day)."
+}
+greet("John", on: "Wednesday")
+```
+
+Use a tuple to make a compound value—for example, to return multiple values from a function.
+튜플(tuple)을 사용하 여러개의 값을 반환할 수 있습니다.
+The elements of a tuple can be referred to either by name or by number.
+
+``` swift
+func calculateStatistics(scores: [Int]) -> (min: Int, max: Int, sum: Int) {
+    var min = scores[0]
+    var max = scores[0]
+    var sum = 0
+
+    for score in scores {
+        if score > max {
+            max = score
+        } else if score < min {
+            min = score
+        }
+        sum += score
+    }
+
+    return (min, max, sum)
+}
+let statistics = calculateStatistics(scores: [5, 3, 100, 3, 9])
+print(statistics.sum)
+print(statistics.2)
+```
+
+Functions can also take a variable number of arguments, collecting them into an array.
+
+``` swift
+func sumOf(numbers: Int...) -> Int {
+    var sum = 0
+    for number in numbers {
+        sum += number
+    }
+    return sum
+}
+sumOf()
+sumOf(numbers: 42, 597, 12)
+```
+
+> 실험(EXPERIMENT):
+<!-- > Write a function that calculates the average of its arguments. -->
+>  그 인수들의 평균값을 계산하는 함수를 써보자.
+
+<!-- Functions can be nested. -->
+함수는 중첩해서 사용할 수도 있습니다.
+Nested functions have access to variables that were declared in the outer function.
+중첩(Nested)된 함수는 감싸고 있는 함수에서 선언된 변수에 접근할 수 있습니다.
+<!-- You can use nested functions to organize the code in a function that is long or complex. -->
+여러분들은 함수 안의 코드가 길거나 복잡해지면 이를 정리하기 위해서 중첩된 함수를 사용할 수 있습니다.
+
+``` swift
+func returnFifteen() -> Int {
+    var y = 10
+    func add() {
+        y += 5
+    }
+    add()
+    return y
+}
+returnFifteen()
+```
+
+<!-- Functions are a first-class type. -->
+함수는 최상위(first-class) 타입입니다.
+<!-- This means that a function can return another function as its value. -->
+이는 특정 함수가 다른 함수를 자신의 값(value)으로 반환할 수 있다는 것을 의미합니다.
+
+``` swift
+func makeIncrementer() -> ((Int) -> Int) {
+    func addOne(number: Int) -> Int {
+        return 1 + number
+    }
+    return addOne
+}
+var increment = makeIncrementer()
+increment(7)
+```
+
+A function can take another function as one of its arguments.
+특정 함수는 다른 함수를 자신의 인자(arguments)중의 하나로 받을 수 있습니다.
+
+``` swift
+func hasAnyMatches(list: [Int], condition: (Int) -> Bool) -> Bool {
+    for item in list {
+        if condition(item) {
+            return true
+        }
+    }
+    return false
+}
+func lessThanTen(number: Int) -> Bool {
+    return number < 10
+}
+var numbers = [20, 19, 7, 12]
+hasAnyMatches(list: numbers, condition: lessThanTen)
+```
+
+Functions are actually a special case of closures: blocks of code that can be called later.
+함수란 실제로 클로저(closures)의 특별한 케이스이다: 코드의 블럭(blocks)이라고 후에 부를 것이다.
+The code in a closure has access to things like variables and functions that were available in the scope where the closure was created, even if the closure is in a different scope when it is executed—you saw an example of this already with nested functions.
+클로저 안의 코드는
+You can write a closure without a name by surrounding code with braces (`{}`).
+여러분들은 중괄호(`{}`)로 코드를 둘러싸지 않아도 도 클로저를 사용할 수 있습니다.
+ Use `in` to separate the arguments and return type from the body.
+`in`를 사용해서 인자와 반환값 타입을 분리해
+
+``` swift
+numbers.map({
+    (number: Int) -> Int in
+    let result = 3 * number
+    return result
+})
+```
+
+> 실험(EXPERIMENT):
+<!-- > Rewrite the closure to return zero for all odd numbers. -->
+> 모든 홀수값을 0으로 반환하도록 클로저를 수정해보자.
+
+<!-- You have several options for writing closures more concisely. -->
+여러분이 더 간결하게 클로저를 쓰기 위한 몇 가지 선택사항(options)이 있습니다.
+<!-- When a closure’s type is already known, such as the callback for a delegate, you can omit the type of its parameters, its return type, or both. -->
+델리게이트(delegate)를 위한 콜백(callback)처럼, 이미 클로저의 타입을 알 경우에는, 여러분은 그 클로저의 매개 변수의 타입이나 반환 값 타입, 또는 모두를 생략할 수 있습니다.
+<!-- Single statement closures implicitly return the value of their only statement. -->
+한 줄짜리 구문(statement)으로 된 클로저는 단지 그 구문의 값만 반환합니다.
+
+``` swift
+let mappedNumbers = numbers.map({ number in 3 * number })
+print(mappedNumbers)
+```
+
+You can refer to parameters by number instead of by name—this approach is especially useful in very short closures.
+여러분은
+A closure passed as the last argument to a function can appear immediately after the parentheses. When a closure is the only argument to a function, you can omit the parentheses entirely.
+매개변수의 이름 대신에 번호로 참조하는 것은 클로저를 짧게 만드는데 특히 유용합니다. 이때 클로저는 함수의 바로 뒤에 중괄호를 이용해 인자로 전달됩니다.
+``` swift
+let sortedNumbers = numbers.sorted { $0 > $1 }
+print(sortedNumbers)
+```
+
+## 객체와 클래스(Objects and Classes)
