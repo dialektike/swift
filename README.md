@@ -1,5 +1,5 @@
 # swift
-최근에 애플에서 공개한 [The Swift Programming Language (Swift 3): About Swift](https://developer.apple.com/library/prerelease/content/documentation/Swift/Conceptual/Swift_Programming_Language/index.html) 으로 다시 번역을 시작하고자 합니다.
+최근에 애플에서 공개한 [The Swift Programming Language (Swift 3)](https://developer.apple.com/library/prerelease/content/documentation/Swift/Conceptual/Swift_Programming_Language/index.html) 으로 다시 번역을 시작하고자 합니다.
 
 ## 제가 하는 번역 방법
 
