@@ -191,3 +191,4 @@ let informalGreeting = "Hi \(nickName ?? fullName)"
 
 Switches support any kind of data and a wide variety of comparison operations—they aren’t limited to integers and tests for equality.
 switch문에는 정수 타입 값이나 동등 비교연산 뿐만 아니라 어떤 종류의 데이터든 사용할 수 있고 다양한 비교 연산자들을 사용할 수 있습니다.
+test
