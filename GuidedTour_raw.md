@@ -411,11 +411,11 @@ hasAnyMatches(list: numbers, condition: lessThanTen)
 ```
 
 Functions are actually a special case of closures: blocks of code that can be called later.
-함수란 실제로 클로저(closures)의 특별한 케이스이다: 코드의 블럭(blocks)이라고 후에 부를 것이다.
+함수란 실제로 클로저(closures)의 특별한 케이스입니다: 코드의 블럭(blocks)이라고 후에 부르데 될 것입니다.
 The code in a closure has access to things like variables and functions that were available in the scope where the closure was created, even if the closure is in a different scope when it is executed—you saw an example of this already with nested functions.
 클로저 안의 코드는
 You can write a closure without a name by surrounding code with braces (`{}`).
-여러분들은 중괄호(`{}`)로 코드를 둘러싸지 않아도 도 클로저를 사용할 수 있습니다.
+여러분들은 중괄호(`{}`)로 코드를 둘러싸지 않아도 클로저를 사용할 수 있습니다.
  Use `in` to separate the arguments and return type from the body.
 `in`를 사용해서 인자와 반환값 타입을 분리해
 
@@ -443,10 +443,13 @@ let mappedNumbers = numbers.map({ number in 3 * number })
 print(mappedNumbers)
 ```
 
-You can refer to parameters by number instead of by name—this approach is especially useful in very short closures.
-여러분은
-A closure passed as the last argument to a function can appear immediately after the parentheses. When a closure is the only argument to a function, you can omit the parentheses entirely.
-매개변수의 이름 대신에 번호로 참조하는 것은 클로저를 짧게 만드는데 특히 유용합니다. 이때 클로저는 함수의 바로 뒤에 중괄호를 이용해 인자로 전달됩니다.
+<!-- You can refer to parameters by number instead of by name—this approach is especially useful in very short closures. -->
+여러분은 이름을 대신해서 숫자로 매개 변수를 참고할 수 있습니다—이런 접근은 매우  짧은 클로저에서 특히 유용합니다.
+A closure passed as the last argument to a function can appear immediately after the parentheses.
+클로저는
+<!-- When a closure is the only argument to a function, you can omit the parentheses entirely. -->
+클로저는 어떤 함수의 인자일 때, 괄호를 완전히 생략할 수 있습니다.
+
 ``` swift
 let sortedNumbers = numbers.sorted { $0 > $1 }
 print(sortedNumbers)
