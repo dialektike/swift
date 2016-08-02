@@ -50,7 +50,7 @@ let myConstant = 42
 <!-- However, you don’t always have to write the type explicitly. -->
 그러나, 그 타입을 항상 명시적으로 작성할 필요는 없습니다.
 <!-- Providing a value when you create a constant or variable lets the compiler infer its type. -->
-여러분이 상수나 변수를 창조할 때 제공한 값을 통해 컴파일러는 해당 값의 타입을 추정(infer)합니다.
+여러분이 상수나 변수를 생성할 때 제공한 값을 통해 컴파일러는 해당 값의 타입을 추정(infer)합니다.
 <!-- In the example above, the compiler infers that ‘myVariable’ is an integer because its initial value is an integer. -->
 위의 예에서, `myVariable`은 처음 값이 정수였기 때문에 컴파일러는 그것을 정수라고 추정합니다.
 
@@ -66,7 +66,7 @@ let explicitDouble: Double  = 70
 
 > 실험(EXPERIMENT):
 <!-- Create a constant with an explicit type of Float and a value of `4`. -->
-> 명확한(explicit) `Float` 타입이면서 `4`라는 값을 가진 상수를 창조해 보세요.
+> 명확한(explicit) `Float` 타입이면서 `4`라는 값을 가진 상수를 생성해 보세요.
 
 <!-- Values are never implicitly converted to another type. -->
 값들을 결코 절대로(implicitly) 다른 타입으로 바꿀 수 없습니다.
@@ -97,7 +97,7 @@ let fruitSummary = "I have \(apples + oranges) pieces of fruit."
 > `\()` 를 이용해 문자열 안에 ‘실수형(floating-point)’ 계산을 포함하도록 해보고, 인사말 안에 누군가의 이름을 넣어보자.
 
 <!-- Create arrays and dictionaries using brackets ([]), and access their elements by writing the index or key in brackets. -->
-배열(array)과 딕셔너리(dictionary)는 대괄호([])를 이용해 창조하고, 그리고 그 대괄호 안에 인덱스(index)나 키(key)를 써서 (배열과 딕셔너리의) 각 요소을 입출력한다.
+배열(array)과 딕셔너리(dictionary)는 대괄호([])를 이용해 생성하고, 그리고 그 대괄호 안에 인덱스(index)나 키(key)를 써서 (배열과 딕셔너리의) 각 요소을 입출력한다.
 <!-- A comma is allowed after the last element. -->
 콤마(번역자 주: 즉 ,)은 맨 마지막 요소 뒤에 허락된다.
 
@@ -113,7 +113,7 @@ occupations["Jayne"] = "Public Relations"
 ```
 
 <!-- To create an empty array or dictionary, use the initializer syntax. -->
-빈 배열이나 빈 딕셔너리를 창조하려면, (다음과 같이) 초기화(initializer) 문법를 사용하면 됩니다.
+빈 배열이나 빈 딕셔너리를 생성하려면, (다음과 같이) 초기화(initializer) 문법를 사용하면 됩니다.
 
 ``` swift
 let emptyArray = [String]()
@@ -286,7 +286,7 @@ print(total)
 <!-- Use `func` to declare a function. -->
 함수를 선언하기 위하여 `func`를 사용해봅시다.
 Call a function by following its name with a list of arguments in parentheses.
-괄호안에 함수의 이름과 괄호안에 인수(arguments)들을 넣을 수 있습니다. 함수를 호출할 때
+괄호안에 함수의 이름과 괄호안에 인자(arguments)들을 넣을 수 있습니다. 함수를 호출할 때
 Use `->` to separate the parameter names and types from the function’s return type.
 매개변수(parameter) 이름들과 그 함수의 반환 분리해서 `->` 사용해 타입 이름을 표기하면 함수 반환 값의 타입을 지정할 수 있습니다.
 
@@ -302,7 +302,7 @@ greet(person: "Bob", day: "Tuesday")
 >  `day` 매개변수를  지우자. 위의 인사말에 오늘의 특별한 점심을 포함하도록 매개 변수를 추가하자.
 
 By default, functions use their parameter names as labels for their arguments.
-기본적으로(By default), 함수들은 그들의 인수를 위하여 매개 변수 이름을 라벨(labels)로 사용합니다.
+기본적으로(By default), 함수들은 그들의 인자를 위하여 매개 변수 이름을 라벨(labels)로 사용합니다.
 Write a custom argument label before the parameter name, or write `_` to use no argument label.
 
 ``` swift
@@ -354,7 +354,7 @@ sumOf(numbers: 42, 597, 12)
 
 > 실험(EXPERIMENT):
 <!-- > Write a function that calculates the average of its arguments. -->
->  그 인수들의 평균값을 계산하는 함수를 써보자.
+>  그 인자들의 평균값을 계산하는 함수를 써보자.
 
 <!-- Functions can be nested. -->
 함수는 중첩해서 사용할 수도 있습니다.
@@ -413,7 +413,7 @@ hasAnyMatches(list: numbers, condition: lessThanTen)
 Functions are actually a special case of closures: blocks of code that can be called later.
 함수란 실제로 클로저(closures)의 특별한 케이스입니다: 코드의 블럭(blocks)이라고 후에 부르데 될 것입니다.
 The code in a closure has access to things like variables and functions that were available in the scope where the closure was created, even if the closure is in a different scope when it is executed—you saw an example of this already with nested functions.
-클로저 안의 코드는
+심지어 코트 안의 클로저가 실행될 때 다른 영역안에 있더라도, 그 코드는 그 클로저가 생성된 영역안에서 유용한 변수들과 함수들 같은 것들에 접근한다-여러분들은 이런 예를 이미 중첩된 함수에서 봤다.
 You can write a closure without a name by surrounding code with braces (`{}`).
 여러분들은 중괄호(`{}`)로 코드를 둘러싸지 않아도 클로저를 사용할 수 있습니다.
  Use `in` to separate the arguments and return type from the body.
@@ -444,9 +444,9 @@ print(mappedNumbers)
 ```
 
 <!-- You can refer to parameters by number instead of by name—this approach is especially useful in very short closures. -->
-여러분은 이름을 대신해서 숫자로 매개 변수를 참고할 수 있습니다—이런 접근은 매우  짧은 클로저에서 특히 유용합니다.
+여러분은 이름을 대신해서 숫자로 매개 변수를 참고할 수 있습니다 — 이런 접근은 매우 짧은 클로저에서 특히 유용합니다.
 A closure passed as the last argument to a function can appear immediately after the parentheses.
-클로저는
+클로저는 그 괄호 뒤에 즉시 나올 수 있는 함수의  
 <!-- When a closure is the only argument to a function, you can omit the parentheses entirely. -->
 클로저는 어떤 함수의 인자일 때, 괄호를 완전히 생략할 수 있습니다.
 
@@ -456,3 +456,33 @@ print(sortedNumbers)
 ```
 
 ## 객체와 클래스(Objects and Classes)
+
+<!-- Use `class` followed by the class’s name to create a class. -->
+클래스를 생성하기 위해서는 `class`를 사용하고 그 뒤에 그 클래스 이름을 씁니다.
+<!-- A property declaration in a class is written the same way as a constant or variable declaration, except that it is in the context of a class. -->
+클래스 안의 속성(property)을 선언하는 것은 상수나 변수를 선언하는 것과 같은 방법으로 쓰면됩니다.
+<!-- Likewise, method and function declarations are written the same way. -->
+게다가(Likewise), 메소드(method)와 함수 선언은 같은 방법을 쓰시면 됩니다.
+
+``` swift
+class Shape {
+    var numberOfSides = 0
+    func simpleDescription() -> String {
+        return "A shape with \(numberOfSides) sides."
+    }
+}
+```
+
+> 실험(EXPERIMENT):
+<!-- > Add a constant property with `let`, and add another method that takes an argument.
+ -->
+>  `let`을 가지고 상수 속성을 추가하고, 그 인자를 갖는 다른 메소드도 추가하세요.
+
+Create an instance of a class by putting parentheses after the class name.
+
+Use dot syntax to access the properties and methods of the instance.
+
+
+var shape = Shape()
+shape.numberOfSides = 7
+var shapeDescription = shape.simpleDescription()
