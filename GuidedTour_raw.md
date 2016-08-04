@@ -113,7 +113,7 @@ occupations["Jayne"] = "Public Relations"
 ```
 
 <!-- To create an empty array or dictionary, use the initializer syntax. -->
-빈 배열이나 빈 딕셔너리를 생성하려면, (다음과 같이) 초기화(initializer) 문법를 사용하면 됩니다.
+빈 배열이나 빈 딕셔너리를 생성하려면, (다음과 같이) 초기화(initializer) 문법을 사용하면 됩니다.
 
 ``` swift
 let emptyArray = [String]()
@@ -458,7 +458,7 @@ print(sortedNumbers)
 ## 객체와 클래스(Objects and Classes)
 
 <!-- Use `class` followed by the class’s name to create a class. -->
-클래스를 생성하기 위해서는 `class`를 사용하고 그 뒤에 그 클래스 이름을 씁니다.
+클래스를 생성하려면 `class`를 사용하고 그 뒤에 그 클래스 이름을 씁니다.
 <!-- A property declaration in a class is written the same way as a constant or variable declaration, except that it is in the context of a class. -->
 클래스 안의 속성(property)을 선언하는 것은 상수나 변수를 선언하는 것과 같은 방법으로 쓰면됩니다.
 <!-- Likewise, method and function declarations are written the same way. -->
@@ -476,13 +476,82 @@ class Shape {
 > 실험(EXPERIMENT):
 <!-- > Add a constant property with `let`, and add another method that takes an argument.
  -->
->  `let`을 가지고 상수 속성을 추가하고, 그 인자를 갖는 다른 메소드도 추가하세요.
+>  `let`을 가지고 상수 속성을 추가하고, 다른 인자를 갖는 다른 메소드도 추가하세요.
 
-Create an instance of a class by putting parentheses after the class name.
+<!-- Create an instance of a class by putting parentheses after the class name.-->
+특정 클래스의 인스턴스를 생성하려면 그 클래스 이름 뒤에 괄호를 넣으면 됩니다.
+<!-- Use dot syntax to access the properties and methods of the instance. -->
+점(dot) 문법을 사용하면 인스턴스의 속성이나 메서드에 접근할 수 있습니다.
 
-Use dot syntax to access the properties and methods of the instance.
-
-
+``` swift
 var shape = Shape()
 shape.numberOfSides = 7
 var shapeDescription = shape.simpleDescription()
+```
+
+<!-- This version of the `Shape` class is missing something important: an initializer to set up the class when an instance is created. -->
+`Shape` 클래스의 이 상태(version)는 중요한 어떤 것이 빠져있습니다: 인스턴스가 생성될 때 그 클래스를 설정하는 초기자(initializer)가 빠져 있습니다.
+<!-- Use `init` to create one. -->
+`init`를 사용하여 이를 생성해봅시다.
+
+``` swift
+class NamedShape {
+    var numberOfSides: Int = 0
+    var name: String
+
+    init(name: String) {
+        self.name = name
+    }
+
+    func simpleDescription() -> String {
+        return "A shape with \(numberOfSides) sides."
+    }
+}
+```
+
+<!-- Notice how `self` is used to distinguish the `name` property from the `name` argument to the initializer. -->
+어떻게 초기자에서 `self`가 `name`속성과 `name`인자를 구별하기 위해 사용되는지 주목합니다.
+<!-- The arguments to the initializer are passed like a function call when you create an instance of the class. -->
+여러분들이 그 클래스의 인스턴스를 생성할 때 초기자에서 인자는 함수를 부르는 것처럼 전달됩니다.
+<!-- Every property needs a value assigned—either in its declaration (as with `numberOfSides`) or in the initializer (as with `name`). -->
+모든 속성들은 특정 값이 할당될 필요가 있습니다—(`numberOfSides` 처럼) 그 값을 선언하거나 또는 (`name`처럼) 초기화로 말입니다.
+
+Use `deinit` to create a deinitializer if you need to perform some cleanup before the object is deallocated.
+만약 여러분이 객체를 해쳬하기(deallocated)하기 전에 정리 작업을 할 필요가 있다면 `deinit`을 사용하여 디이니셜라이저(deinitializer)를 생성합니다.
+
+<!-- Subclasses include their superclass name after their class name, separated by a colon. -->
+하위 클래스들(Subclasses)은 그 클래스들 이름 뒤에, 콜론(즉 ':')으로 분리해 상위 클래스(superclass) 이름을 포함시킵니다.
+There is no requirement for classes to subclass any standard root class, so you can include or omit a superclass as needed.
+꼭 기본 루트 클래스가 필요한 것은 아니기 때문에 상위 클래스를 포함해도 되고 생략해도 됩니다.
+
+<!-- Methods on a subclass that override the superclass’s implementation are marked with `override`—overriding a method by accident, without `override`, is detected by the compiler as an error. -->
+하위 클래스에서 상위 클래스에서 구현된 메서드를 재정의(override)하려면 그 메소를 `override`으로 표시해줘야 합니다—`override`가 없이, 우연히 메소드를 재정의하는 것을 컴파일러는 에러로 찾아 냅니다.
+<!-- The compiler also detects methods with `override` that don’t actually override any method in the superclass. -->
+실제로 상위 클래스에서 어떤 메소드도 재정의하지 메소드들도 컴파일러는 `override`를 사용하여 찾아 냅니다.
+
+``` swift
+class Square: NamedShape {
+    var sideLength: Double
+
+    init(sideLength: Double, name: String) {
+        self.sideLength = sideLength
+        super.init(name: name)
+        numberOfSides = 4
+    }
+
+    func area() ->  Double {
+        return sideLength * sideLength
+    }
+
+    override func simpleDescription() -> String {
+        return "A square with sides of length \(sideLength)."
+    }
+}
+let test = Square(sideLength: 5.2, name: "my test square")
+test.area()
+test.simpleDescription()
+```
+
+> 실험(EXPERIMENT):
+<!-- > Make another subclass of `NamedShape` called `Circle` that takes a radius and a name as arguments to its initializer. Implement an area() and a simpleDescription() method on the Circle class. -->
+> `Circle`이라는 부르는 `NamedShape`의 또 다른 하위 클래스를 만들고 이 클래스는 이니셜 라이저를 통해 radius와 name을 인자로 받는다. Circle 클래스 안에 area, describe 함수를 구현해보자.
